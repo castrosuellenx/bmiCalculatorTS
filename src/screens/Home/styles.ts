@@ -13,6 +13,8 @@ export const Container = styled.View`
   background-color: ${({theme}) => theme.colors.background};
 `;
 
+export const StatusBar = styled.StatusBar<Props>``;
+
 export const Header = styled.View`
   flex-direction: row;
   width: 95%;

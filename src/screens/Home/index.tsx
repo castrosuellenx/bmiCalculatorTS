@@ -30,6 +30,10 @@ const Home: React.FC<Props> = ({focused = false, toggleTheme}) => {
 
   return (
     <S.Container>
+      <S.StatusBar
+        backgroundColor={colors.background}
+        barStyle={title === 'dark' ? 'light-content' : 'dark-content'}
+      />
       <S.Header>
         <S.Title>BMI Calculator</S.Title>
 
