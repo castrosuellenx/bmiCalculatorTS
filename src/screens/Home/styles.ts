@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import RFValue from '../../utils/RFValue';
-//import RFValue from '@/utils/RFValue';
 
 type Props = {
   focused?: boolean;
@@ -13,7 +12,7 @@ export const Container = styled.View`
   background-color: ${({theme}) => theme.colors.background};
 `;
 
-export const StatusBar = styled.StatusBar<Props>``;
+export const StatusBar = styled.StatusBar``;
 
 export const Header = styled.View`
   flex-direction: row;
@@ -31,7 +30,7 @@ export const Title = styled.Text`
   padding-vertical: ${RFValue(30)}px;
 `;
 
-export const Switch = styled.Switch<Props>``;
+export const Switch = styled.Switch``;
 
 /* export const BoxPrimary = styled.View`
   justify-content: center;

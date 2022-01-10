@@ -1,15 +1,14 @@
 import React, {useState, useContext} from 'react';
-import {ThemeContext} from 'styled-components/native';
+import {useTheme} from 'styled-components/native';
 
 import * as S from './styles';
 
 export type Props = {
-  focused?: boolean;
   toggleTheme(): void;
 };
 
-const Home: React.FC<Props> = ({focused = false, toggleTheme}) => {
-  const {colors, title} = useContext(ThemeContext);
+const Home: React.FC<Props> = ({toggleTheme}) => {
+  const theme = useTheme();
 
   const [isMale, setIsMale] = useState(true);
   const [isFemale, setIsFemale] = useState(false);
@@ -31,17 +30,20 @@ const Home: React.FC<Props> = ({focused = false, toggleTheme}) => {
   return (
     <S.Container>
       <S.StatusBar
-        backgroundColor={colors.background}
-        barStyle={title === 'dark' ? 'light-content' : 'dark-content'}
+        backgroundColor={theme.colors.background}
+        barStyle={theme.title === 'dark' ? 'light-content' : 'dark-content'}
       />
       <S.Header>
         <S.Title>BMI Calculator</S.Title>
 
         <S.Switch
           onValueChange={toggleTheme}
-          value={title === 'dark' ? true : false}
-          trackColor={{false: colors.secondary, true: colors.secondary}}
-          thumbColor={colors.primary}
+          value={theme.title === 'dark' ? true : false}
+          trackColor={{
+            false: theme.colors.secondary,
+            true: theme.colors.secondary,
+          }}
+          thumbColor={theme.colors.primary}
           ios_backgroundColor="#3e3e3e"
         />
       </S.Header>
