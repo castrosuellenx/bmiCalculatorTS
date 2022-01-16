@@ -1,7 +1,9 @@
 import 'react-native-gesture-handler';
 
 import React, {useState} from 'react';
-import {ThemeProvider} from 'styled-components/native';
+import {NavigationContainer} from '@react-navigation/native';
+import {ThemeProvider, useTheme} from 'styled-components/native';
+import Routes from './routes';
 
 import light from './styles/themes/light';
 import dark from './styles/themes/dark';
@@ -16,9 +18,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Home toggleTheme={toggleTheme} />
-    </ThemeProvider>
+    <NavigationContainer>
+      <ThemeProvider theme={theme}>
+        <Home toggleTheme={toggleTheme} />
+      </ThemeProvider>
+    </NavigationContainer>
   );
 };
 
