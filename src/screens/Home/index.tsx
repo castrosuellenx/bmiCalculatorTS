@@ -5,11 +5,7 @@ import Gender from '../../components/Gender';
 
 import * as S from './styles';
 
-export type Props = {
-  toggleTheme(): void;
-};
-
-const Home: React.FC<Props> = ({toggleTheme}) => {
+const Home: React.FC = () => {
   const theme = useTheme();
 
   return (
@@ -18,7 +14,7 @@ const Home: React.FC<Props> = ({toggleTheme}) => {
         backgroundColor={theme.colors.background}
         barStyle={theme.title === 'dark' ? 'light-content' : 'dark-content'}
       />
-      <Header toggleTheme={toggleTheme} />
+      <Header />
 
       <S.BoxSecondary>
         <Gender />

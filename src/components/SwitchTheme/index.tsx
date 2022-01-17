@@ -1,14 +1,17 @@
 import React from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {useTheme} from 'styled-components/native';
 
 import * as S from './styles';
 
-export type Props = {
-  toggleTheme(): void;
-};
-
-const SwitchTheme: React.FC<Props> = ({toggleTheme}) => {
+const SwitchTheme: React.FC = () => {
   const theme = useTheme();
+  const {isDark} = useSelector(state => state.theme);
+  const dispatch = useDispatch();
+
+  const toggleTheme = () => {
+    dispatch({type: 'TOGGLE_THEME', payload: !isDark});
+  };
 
   return (
     <>
