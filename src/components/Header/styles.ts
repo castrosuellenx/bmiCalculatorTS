@@ -12,8 +12,8 @@ export const Header = styled.View`
 `;
 
 export const MenuButton = styled.TouchableOpacity`
-  width: ${RFValue(27)}px;
-  height: ${RFValue(27)}px;
+  width: ${RFValue(24)}px;
+  height: ${RFValue(24)}px;
 `;
 
 export const Title = styled.Text`
@@ -24,6 +24,6 @@ export const Title = styled.Text`
 `;
 
 export const BoxToAlign = styled.TouchableOpacity`
-  width: ${RFValue(27)}px;
-  height: ${RFValue(27)}px;
+  width: ${RFValue(24)}px;
+  height: ${RFValue(24)}px;
 `;
