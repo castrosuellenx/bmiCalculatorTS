@@ -7,8 +7,6 @@ export const Container = styled.View`
   justify-content: center;
 `;
 
-export const StatusBar = styled.StatusBar``;
-
 export const WrapperProfile = styled.View`
   background-color: ${({theme}) => theme.colors.boxPrimary};
   border-bottom-left-radius: ${RFValue(30)}px;
@@ -36,4 +34,27 @@ export const UserName = styled.Text`
   text-align: center;
 `;
 
-export const WrapperSwitch = styled.View``;
+export const WrapperOptions = styled.View`
+  flex: 3;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const WrapperSwitch = styled.View`
+  width: ${RFValue(94)}%;
+  align-items: center;
+  padding-top: ${RFValue(25)}px;
+`;
+
+export const Divisor = styled.View`
+  width: ${RFValue(75)}%;
+  margin-top: ${RFValue(10)}px;
+  border-top-width: ${RFValue(1)}px;
+  border-color: ${({theme}) => theme.colors.border};
+  align-self: center;
+`;
+
+export const WrapperButtons = styled.View`
+  width: ${RFValue(94)}%;
+  align-items: center;
+`;

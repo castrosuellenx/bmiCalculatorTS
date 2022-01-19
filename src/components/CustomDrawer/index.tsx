@@ -11,6 +11,7 @@ import * as S from './styles';
 import {images} from '../../assets/';
 import SwitchTheme from '../SwitchTheme';
 import {Switch} from 'react-native';
+import ButtonWithIcon from '../Buttons/ButtonWithIcon';
 
 const CustomDrawer: React.FC<DrawerContentComponentProps> = ({...rest}) => {
   const theme = useTheme();
@@ -26,7 +27,44 @@ const CustomDrawer: React.FC<DrawerContentComponentProps> = ({...rest}) => {
         <DrawerItemList {...rest} />
       </DrawerContentScrollView>
 
-      <SwitchTheme />
+      <S.WrapperOptions>
+        <S.WrapperSwitch>
+          <SwitchTheme />
+          <S.Divisor />
+        </S.WrapperSwitch>
+
+        <S.WrapperButtons>
+          <ButtonWithIcon
+            title="Share this app"
+            icon="share"
+            size={24}
+            color={theme.colors.text}
+            marginTop
+          />
+
+          <S.Divisor />
+
+          <ButtonWithIcon
+            title="About & Help"
+            icon="info"
+            size={24}
+            color={theme.colors.text}
+            marginTop
+          />
+
+          <S.Divisor />
+
+          <ButtonWithIcon
+            bold
+            title="Sign Out"
+            icon="logout"
+            size={24}
+            color={theme.colors.primary}
+            marginTop
+            marginBottom
+          />
+        </S.WrapperButtons>
+      </S.WrapperOptions>
     </S.Container>
   );
 };
