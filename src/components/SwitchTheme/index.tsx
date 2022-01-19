@@ -1,6 +1,9 @@
 import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {RFValue} from 'react-native-responsive-fontsize';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useTheme} from 'styled-components/native';
+import {useDispatch, useSelector} from 'react-redux';
+
 import {toggleTheme} from '../../store/modules/theme/actions';
 
 import * as S from './styles';
@@ -15,7 +18,15 @@ const SwitchTheme: React.FC = () => {
   };
 
   return (
-    <>
+    <S.Container>
+      <MaterialIcons
+        name="nights-stay"
+        size={RFValue(23)}
+        color={theme.colors.text}
+      />
+
+      <S.Title>Dark Theme</S.Title>
+
       <S.Switch
         onValueChange={onToggleTheme}
         value={theme.title === 'dark' ? true : false}
@@ -26,7 +37,7 @@ const SwitchTheme: React.FC = () => {
         thumbColor={theme.colors.primary}
         ios_backgroundColor="#3e3e3e"
       />
-    </>
+    </S.Container>
   );
 };
 
