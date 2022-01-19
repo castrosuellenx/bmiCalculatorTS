@@ -24,6 +24,10 @@ export const ChooseGender = styled.TouchableOpacity`
   border-radius: ${RFValue(8)}px; ;
 `;
 
+export const WrapperIconGender = styled.View`
+  margin-bottom: ${RFValue(8)}px;
+`;
+
 export const Gender = styled.Text<Props>`
   font-size: ${RFValue(22)}px;
   font-family: ${({theme}) => theme.fontFamily.bold};
