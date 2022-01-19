@@ -7,8 +7,6 @@ const Home: React.FC = () => {
   return (
     <S.Header>
       <S.Title>BMI Calculator</S.Title>
-
-      <SwitchTheme />
     </S.Header>
   );
 };

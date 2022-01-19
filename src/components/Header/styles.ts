@@ -4,7 +4,7 @@ import {RFValue} from 'react-native-responsive-fontsize';
 export const Header = styled.View`
   flex-direction: row;
   width: 95%;
-  justify-content: space-around;
+  justify-content: center;
   background-color: ${({theme}) => theme.colors.boxSecondary};
   border-radius: ${RFValue(27)}px;
   margin-vertical: ${RFValue(5)}px;
