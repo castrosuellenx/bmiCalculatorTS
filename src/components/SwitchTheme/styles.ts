@@ -10,11 +10,11 @@ export const Container = styled.View`
 
 export const Title = styled.Text`
   font-family: ${({theme}) => theme.fontFamily.regular}
-  font-size: ${RFValue(18)}px;
+  font-size: ${RFValue(17)}px;
   color: ${({theme}) => theme.colors.text}
   text-align: center;
   margin-left: ${RFValue(5)}px;
-  margin-right: ${RFValue(18)}px;
+  margin-right: ${RFValue(5)}px;
 `;
 
 export const Switch = styled.Switch``;

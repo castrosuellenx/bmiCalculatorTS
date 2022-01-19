@@ -12,6 +12,7 @@ import {images} from '../../assets/';
 import SwitchTheme from '../SwitchTheme';
 import {Switch} from 'react-native';
 import ButtonWithIcon from '../Buttons/ButtonWithIcon';
+import {RFValue} from 'react-native-responsive-fontsize';
 
 const CustomDrawer: React.FC<DrawerContentComponentProps> = ({...rest}) => {
   const theme = useTheme();
@@ -37,7 +38,7 @@ const CustomDrawer: React.FC<DrawerContentComponentProps> = ({...rest}) => {
           <ButtonWithIcon
             title="Share this app"
             icon="share"
-            size={24}
+            size={RFValue(21)}
             color={theme.colors.text}
             marginTop
           />
@@ -47,7 +48,7 @@ const CustomDrawer: React.FC<DrawerContentComponentProps> = ({...rest}) => {
           <ButtonWithIcon
             title="About & Help"
             icon="info"
-            size={24}
+            size={RFValue(21)}
             color={theme.colors.text}
             marginTop
           />
@@ -58,7 +59,7 @@ const CustomDrawer: React.FC<DrawerContentComponentProps> = ({...rest}) => {
             bold
             title="Sign Out"
             icon="logout"
-            size={24}
+            size={RFValue(21)}
             color={theme.colors.primary}
             marginTop
             marginBottom

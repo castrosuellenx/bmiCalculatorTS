@@ -21,7 +21,7 @@ const SwitchTheme: React.FC = () => {
     <S.Container>
       <MaterialIcons
         name="nights-stay"
-        size={RFValue(23)}
+        size={RFValue(21)}
         color={theme.colors.text}
       />
 

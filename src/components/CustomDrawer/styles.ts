@@ -43,11 +43,11 @@ export const WrapperOptions = styled.View`
 export const WrapperSwitch = styled.View`
   width: ${RFValue(94)}%;
   align-items: center;
-  padding-top: ${RFValue(25)}px;
+  padding-top: ${RFValue(20)}px;
 `;
 
 export const Divisor = styled.View`
-  width: ${RFValue(75)}%;
+  width: ${RFValue(65)}%;
   margin-top: ${RFValue(10)}px;
   border-top-width: ${RFValue(1)}px;
   border-color: ${({theme}) => theme.colors.border};

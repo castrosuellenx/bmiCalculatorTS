@@ -22,7 +22,7 @@ export const Container = styled(TouchableOpacity)<TouchableOpacityProps>`
 export const Title = styled.Text<TextProps>`
   font-family: ${({bold, theme}) =>
     bold ? theme.fontFamily.bold : theme.fontFamily.regular}
-  font-size: ${RFValue(18)}px;
+  font-size: ${RFValue(17)}px;
   color: ${({color}) => color}
   text-align: center;
   margin-left: ${RFValue(7)}px;
