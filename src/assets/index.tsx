@@ -5,8 +5,6 @@ import exampleUserPicture from './images/exampleUserPicture.png';
 import defaultUserPicture from './images/defaultUserPicture.jpg';
 
 // svg
-import MenuDarkSVG from './svg/menuDark.svg';
-import MenuLightSVG from './svg/menuLight.svg';
 import MaleDarkSVG from './svg/maleDark.svg';
 import MaleDarkUnfocusedSVG from './svg/maleDarkUnfocused.svg';
 import MaleLightSVG from './svg/maleLight.svg';
@@ -25,14 +23,6 @@ export type SVGProps = {
   width: number | string;
   height: number | string;
 };
-
-export const MenuDark: React.FC<SVGProps> = ({width, height}) => (
-  <MenuDarkSVG width={width} height={height} />
-);
-
-export const MenuLight: React.FC<SVGProps> = ({width, height}) => (
-  <MenuLightSVG width={width} height={height} />
-);
 
 export const MaleDark: React.FC<SVGProps> = ({width, height}) => (
   <MaleDarkSVG width={width} height={height} />
