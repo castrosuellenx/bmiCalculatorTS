@@ -12,10 +12,10 @@ import {
   FemaleLight,
   FemaleLightUnfocused,
 } from '../../assets';
-import {RFValue} from 'react-native-responsive-fontsize';
+import AnimatedBox from './AnimatedBox';
 
 const Gender: React.FC = () => {
-  const [isMale, setIsMale] = useState(true);
+  const [isMale, setIsMale] = useState(false);
   const [isFemale, setIsFemale] = useState(false);
 
   const theme = useTheme();
@@ -34,44 +34,45 @@ const Gender: React.FC = () => {
     }
   };
 
-  console.log(!isMale);
-
   return (
     <S.ContainGenders>
       <S.ChooseGender activeOpacity={0.8} onPress={onChooseMale}>
-        <S.WrapperIconGender>
-          {theme.title === 'dark' ? (
-            isMale ? (
-              <MaleDark height={RFValue(58)} width={RFValue(58)} />
+        <AnimatedBox startAnimated={isMale} titleGender="Male" focused={isMale}>
+          <S.WrapperIconGender>
+            {theme.title === 'dark' ? (
+              isMale ? (
+                <MaleDark height={'100%'} width={'100%'} />
+              ) : (
+                <MaleDarkUnfocused height={'100%'} width={'100%'} />
+              )
+            ) : isMale ? (
+              <MaleLight height={'100%'} width={'100%'} />
             ) : (
-              <MaleDarkUnfocused height={RFValue(58)} width={RFValue(58)} />
-            )
-          ) : isMale ? (
-            <MaleLight height={RFValue(58)} width={RFValue(58)} />
-          ) : (
-            <MaleLightUnfocused height={RFValue(58)} width={RFValue(58)} />
-          )}
-        </S.WrapperIconGender>
-
-        <S.Gender focused={isMale}>Male</S.Gender>
+              <MaleLightUnfocused height={'100%'} width={'100%'} />
+            )}
+          </S.WrapperIconGender>
+        </AnimatedBox>
       </S.ChooseGender>
 
       <S.ChooseGender activeOpacity={0.8} onPress={onChooseFemale}>
-        <S.WrapperIconGender>
-          {theme.title === 'dark' ? (
-            isFemale ? (
-              <FemaleDark height={RFValue(58)} width={RFValue(58)} />
+        <AnimatedBox
+          startAnimated={isFemale}
+          titleGender="Female"
+          focused={isFemale}>
+          <S.WrapperIconGender>
+            {theme.title === 'dark' ? (
+              isFemale ? (
+                <FemaleDark height={'100%'} width={'100%'} />
+              ) : (
+                <FemaleDarkUnfocused height={'100%'} width={'100%'} />
+              )
+            ) : isFemale ? (
+              <FemaleLight height={'100%'} width={'100%'} />
             ) : (
-              <FemaleDarkUnfocused height={RFValue(58)} width={RFValue(58)} />
-            )
-          ) : isFemale ? (
-            <FemaleLight height={RFValue(58)} width={RFValue(58)} />
-          ) : (
-            <FemaleLightUnfocused height={RFValue(58)} width={RFValue(58)} />
-          )}
-        </S.WrapperIconGender>
-
-        <S.Gender focused={isFemale}>Female</S.Gender>
+              <FemaleLightUnfocused height={'100%'} width={'100%'} />
+            )}
+          </S.WrapperIconGender>
+        </AnimatedBox>
       </S.ChooseGender>
     </S.ContainGenders>
   );
