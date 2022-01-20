@@ -16,6 +16,8 @@ export default {
     yellow: '#FFC400',
     orange: '#FF7700',
     red: '#FF0000',
+
+    barStyle: 'light-content',
   },
 
   fontFamily: {

@@ -1,3 +1,5 @@
+import {StatusBarStyle} from 'react-native';
+
 export default {
   title: 'light',
 
@@ -16,6 +18,8 @@ export default {
     yellow: '#D8B400',
     orange: '#FF8000',
     red: '#C20000',
+
+    barStyle: 'dark-content' as StatusBarStyle | null | undefined,
   },
 
   fontFamily: {
