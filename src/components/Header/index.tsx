@@ -2,10 +2,10 @@ import React from 'react';
 import {useTheme} from 'styled-components';
 import {DrawerActions} from '@react-navigation/native';
 import {useNavigation} from '@react-navigation/native';
+import Feather from 'react-native-vector-icons/Feather';
+import {RFValue} from 'react-native-responsive-fontsize';
 
 import * as S from './styles';
-import SwitchTheme from '../../components/SwitchTheme';
-import {MenuDark, MenuLight} from '../../assets';
 
 const Home: React.FC = () => {
   const theme = useTheme();
@@ -15,11 +15,7 @@ const Home: React.FC = () => {
     <S.Header>
       <S.MenuButton
         onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-        {theme.title === 'dark' ? (
-          <MenuDark height={'100%'} width={'100%'} />
-        ) : (
-          <MenuLight height={'100%'} width={'100%'} />
-        )}
+        <Feather name="menu" size={RFValue(24)} color={theme.colors.text} />
       </S.MenuButton>
 
       <S.Title>BMI Calculator</S.Title>
