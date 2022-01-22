@@ -1,11 +1,17 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import DrawerMenu from './DrawerMenu';
+import DrawerMenu from './DrawerMenu.routes';
 import Result from '../screens/Result';
 import History from '../screens/History';
 
-const Stack = createStackNavigator();
+export type RootStackParamList = {
+  Main: undefined;
+  Result: undefined;
+  History: undefined;
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 const StackScreens = () => {
   return (

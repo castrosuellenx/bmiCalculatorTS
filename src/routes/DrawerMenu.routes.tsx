@@ -7,7 +7,12 @@ import CustomDrawer from '../components/CustomDrawer';
 import Home from '../screens/Home';
 import History from '../screens/History';
 
-const Drawer = createDrawerNavigator();
+export type RootStackParamList = {
+  Home: undefined;
+  History: undefined;
+};
+
+const Drawer = createDrawerNavigator<RootStackParamList>();
 
 const DrawerMenu = () => {
   const theme = useTheme();
