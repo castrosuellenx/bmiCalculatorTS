@@ -6,6 +6,7 @@ type Props = {
 };
 
 export const ContainGenders = styled.View`
+  width: ${RFValue(90)}%;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -14,7 +15,7 @@ export const ContainGenders = styled.View`
 
 export const ChooseGender = styled.TouchableOpacity`
   height: ${RFValue(142.5)}px;
-  width: ${RFValue(157)}px;
+  width: ${RFValue(51)}%;
   justify-content: center;
   align-items: center;
   margin-horizontal: ${RFValue(3)}px;
@@ -29,8 +30,8 @@ export const WrapperIconGender = styled.View`
 `;
 
 export const textGender = styled.Text<Props>`
-font-size: ${RFValue(21)}px;
-font-family: ${({theme}) => theme.fontFamily.bold}
-color: ${({focused, theme}) =>
-  focused ? theme.colors.text : theme.colors.unfocused}
+  font-size: ${RFValue(21)}px;
+  font-family: ${({theme}) => theme.fontFamily.bold};
+  color: ${({focused, theme}) =>
+    focused ? theme.colors.text : theme.colors.unfocused};
 `;
