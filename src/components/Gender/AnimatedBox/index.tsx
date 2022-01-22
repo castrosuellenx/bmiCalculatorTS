@@ -5,16 +5,10 @@ import {useTheme} from 'styled-components';
 
 export type Props = {
   startAnimated: boolean;
-  titleGender: string;
   focused: boolean;
 };
 
-const AnimatedBox: React.FC<Props> = ({
-  startAnimated,
-  titleGender,
-  focused,
-  children,
-}) => {
+const AnimatedBox: React.FC<Props> = ({startAnimated, focused, children}) => {
   const theme = useTheme();
 
   return (
@@ -36,15 +30,6 @@ const AnimatedBox: React.FC<Props> = ({
           alignItems: 'center',
         }}>
         {children}
-
-        <MotiText
-          style={{
-            fontSize: RFValue(21),
-            fontFamily: theme.fontFamily.bold,
-            color: focused ? theme.colors.text : theme.colors.unfocused,
-          }}>
-          {titleGender}
-        </MotiText>
       </MotiView>
     </>
   );

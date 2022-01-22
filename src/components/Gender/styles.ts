@@ -1,6 +1,10 @@
 import styled from 'styled-components/native';
 import {RFValue} from 'react-native-responsive-fontsize';
 
+type Props = {
+  focused?: boolean;
+};
+
 export const ContainGenders = styled.View`
   flex-direction: row;
   justify-content: center;
@@ -17,7 +21,16 @@ export const ChooseGender = styled.TouchableOpacity`
 `;
 
 export const WrapperIconGender = styled.View`
-  height: ${RFValue(40.7)}%;
-  width: ${RFValue(36.94)}%;
-  margin-bottom: ${RFValue(10)}px;
+  height: ${RFValue(54.98)}%;
+  width: ${RFValue(50.95)}%;
+  margin-bottom: ${RFValue(8)}px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const textGender = styled.Text<Props>`
+font-size: ${RFValue(21)}px;
+font-family: ${({theme}) => theme.fontFamily.bold}
+color: ${({focused, theme}) =>
+  focused ? theme.colors.text : theme.colors.unfocused}
 `;

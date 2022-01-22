@@ -1,17 +1,9 @@
 import React, {useState} from 'react';
 import {useTheme} from 'styled-components';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {RFValue} from 'react-native-responsive-fontsize';
 
 import * as S from './styles';
-import {
-  MaleDark,
-  MaleDarkUnfocused,
-  MaleLight,
-  MaleLightUnfocused,
-  FemaleDark,
-  FemaleDarkUnfocused,
-  FemaleLight,
-  FemaleLightUnfocused,
-} from '../../assets';
 import AnimatedBox from './AnimatedBox';
 
 const Gender: React.FC = () => {
@@ -37,41 +29,28 @@ const Gender: React.FC = () => {
   return (
     <S.ContainGenders>
       <S.ChooseGender activeOpacity={0.8} onPress={onChooseMale}>
-        <AnimatedBox startAnimated={isMale} titleGender="Male" focused={isMale}>
+        <AnimatedBox startAnimated={isMale} focused={isMale}>
           <S.WrapperIconGender>
-            {theme.title === 'dark' ? (
-              isMale ? (
-                <MaleDark height={'100%'} width={'100%'} />
-              ) : (
-                <MaleDarkUnfocused height={'100%'} width={'100%'} />
-              )
-            ) : isMale ? (
-              <MaleLight height={'100%'} width={'100%'} />
-            ) : (
-              <MaleLightUnfocused height={'100%'} width={'100%'} />
-            )}
+            <Ionicons
+              name="male"
+              size={RFValue(70)}
+              color={isMale ? theme.colors.text : theme.colors.unfocused}
+            />
           </S.WrapperIconGender>
+          <S.textGender focused={isMale}>Male</S.textGender>
         </AnimatedBox>
       </S.ChooseGender>
 
       <S.ChooseGender activeOpacity={0.8} onPress={onChooseFemale}>
-        <AnimatedBox
-          startAnimated={isFemale}
-          titleGender="Female"
-          focused={isFemale}>
+        <AnimatedBox startAnimated={isFemale} focused={isFemale}>
           <S.WrapperIconGender>
-            {theme.title === 'dark' ? (
-              isFemale ? (
-                <FemaleDark height={'100%'} width={'100%'} />
-              ) : (
-                <FemaleDarkUnfocused height={'100%'} width={'100%'} />
-              )
-            ) : isFemale ? (
-              <FemaleLight height={'100%'} width={'100%'} />
-            ) : (
-              <FemaleLightUnfocused height={'100%'} width={'100%'} />
-            )}
+            <Ionicons
+              name="female"
+              size={RFValue(70)}
+              color={isFemale ? theme.colors.text : theme.colors.unfocused}
+            />
           </S.WrapperIconGender>
+          <S.textGender focused={isFemale}>Female</S.textGender>
         </AnimatedBox>
       </S.ChooseGender>
     </S.ContainGenders>
