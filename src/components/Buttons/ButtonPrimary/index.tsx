@@ -1,16 +1,21 @@
 import React from 'react';
-import {TouchableOpacityProps} from 'react-native';
+import {ActivityIndicator, TouchableOpacityProps} from 'react-native';
 
 import * as S from './styles';
 
 export type Props = {
   title: string;
+  loading?: boolean;
 } & TouchableOpacityProps;
 
-const ButtonPrimary: React.FC<Props> = ({title, ...rest}) => {
+const ButtonPrimary: React.FC<Props> = ({title, loading = false, ...rest}) => {
   return (
     <S.Container {...rest}>
-      <S.Title>{title}</S.Title>
+      {loading ? (
+        <ActivityIndicator size="large" color="#FEFEFE" />
+      ) : (
+        <S.Title>{title}</S.Title>
+      )}
     </S.Container>
   );
 };
